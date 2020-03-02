@@ -24,13 +24,13 @@ export const asyncRouterMap = [
             name: 'Workplace',
             component: () => import('@/views/dashboard/Workplace'),
             meta: { title: '工作台', keepAlive: true, permission: [ 'dashboard' ] }
-          },
-          {
-            path: '/dashboard/analysis',
-            name: 'Analysis',
-            component: () => import('@/views/dashboard/Analysis'),
-            meta: { title: '分析页', keepAlive: false, permission: [ 'dashboard' ] }
           }
+          // {
+          //   path: '/dashboard/analysis',
+          //   name: 'Analysis',
+          //   component: () => import('@/views/dashboard/Analysis'),
+          //   meta: { title: '分析页', keepAlive: false, permission: [ 'dashboard' ] }
+          // }
           // // 外部链接
           // {
           //   path: 'https://www.baidu.com/',

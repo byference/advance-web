@@ -37,6 +37,7 @@ const user = {
     Login ({ commit }, userInfo) {
       return new Promise((resolve, reject) => {
         login(userInfo).then(response => {
+          console.log('success: ', response)
           Vue.ls.set(ACCESS_TOKEN, response.access_token, response.expires_in * 1000)
           Vue.ls.set(REFRESH_TOKEN, response.refresh_token, 7 * 24 * 60 * 60 * 1000)
           Vue.ls.set(TOKEN_TYPE, response.token_type, 7 * 24 * 60 * 60 * 1000)
@@ -63,7 +64,8 @@ const user = {
                 per.actionList = action
               }
             })
-            role.permissionList = role.permissions.map(permission => { return permission.permissionId })
+            role.permissionList = role.permissions.map(permission => { return permission.permissionName })
+            // console.log('SET_ROLES', result.role)
             commit('SET_ROLES', result.role)
             commit('SET_INFO', result)
           } else {
